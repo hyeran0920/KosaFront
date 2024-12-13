@@ -1,0 +1,43 @@
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrapper{
+            display: flex;
+            flex-direction: column;
+        }
+        header{
+            padding: 100px;
+            font-size: 40px;
+            color: #fff;
+            text-align: center;
+            background: #666;
+            width: auto;
+            height: 100px;
+        }        
+        footer{
+            padding-top: 20px;
+            color: #fff;
+            text-align: center;
+
+            background: #666;
+            width: auto;
+            height: 50px;
+        }
+
+        section{
+            width: auto;
+            height: 300px;
+            display: flex;
+            flex-direction: row;
+        }
+        nav{
+            padding: 30px;
+            width: 200px;
+            background: #ccc;
+        }
+        article{
+            background: #eee;
+            padding: 30px;
+            flex-grow: 1;
+        }

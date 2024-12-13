@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+
+    <script>
+        window.addEventListener("load",()=>{//load는 html 의 자원이 다 다운로드 받아야 실행되기때문에 늦게 출력됨
+            console.log("load 이벤트 처리1");
+        })
+        window.addEventListener("load",()=>{
+            console.log("load 이벤트 처리2");
+        })
+
+        $(() =>{//html 자체가 실행되면 출력된다 - ready가 더 빠르다
+            console.log("ready1 이벤트 처리");
+        });
+
+        $(() =>{
+            console.log("ready2 이벤트 처리");
+        });
+        $(document).ready(()=>{
+            console.log("ready 이벤트 처리 3");
+        })
+    </script>
+
+</head>
+<body>
+    <img src="/common/image/photo1.jpg" width="100" height="100"/>
+    <img src="/common/image/photo2.jpg" width="100" height="100"/>
+    <img src="/common/image/photo3.jpg" width="100" height="100"/>
+    <img src="/common/image/photo4.jpg" width="100" height="100"/>
+    <img src="/common/image/photo5.jpg" width="100" height="100"/>
+    <img src="/common/image/photo6.jpg" width="100" height="100"/>
+    <img src="/common/image/photo7.jpg" width="100" height="100"/>
+    <img src="/common/image/photo8.jpg" width="100" height="100"/>
+    <img src="/common/image/photo9.jpg" width="100" height="100"/>
+    <img src="/common/image/photo10.jpg" width="100" height="100"/>
+</body>
+</html>

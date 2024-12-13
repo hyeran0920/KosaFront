@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun1(){
+            //객체 찾기
+            const imgCollection = window.document.getElementsByTagName("img");//컬렉션 리턴
+            console.log(imgCollection);
+
+            const img = imgCollection.item(0);
+            console.log(img);
+
+            //객체 속성(데이터)변경
+            img.src="/common/image/photo2.jpg";//이미지 변경
+            img.width="200";//이미지 크기 변경
+            img.height="200";
+        }
+
+        function fun2(){
+            //객체 찾기
+            const img = document.getElementById("img1");//id는 다 달라야함
+            //객체 속성(데이터 변경)
+            img.src="/common/image/photo5.jpg";//이미지 변경
+            img.width="200";//이미지 크기 변경
+            img.height="200";
+            
+        }
+        function fun3(){
+            //객체 찾기
+            const imgCollection = window.document.getElementsByClassName("group1");//클래스는여러개 묶음, 컬렉션으로 가져옴
+            console.log(imgCollection);
+            const img = imgCollection.item(0);
+            console.log(img);
+
+            //객체 속성(데이터)변경
+            img.src="/common/image/photo4.jpg";//이미지 변경
+            img.width="200";//이미지 크기 변경
+            img.height="200";
+        }
+
+        function fun4(){
+            const imgNodeList = document.querySelectorAll("img");//nodelist로 출력됨 / 태그이름으로 찾는거임
+            console.log(imgNodeList);
+            const img = imgNodeList.item(0);
+
+            //객체 속성(데이터)변경
+            img.src="/common/image/photo7.jpg";//이미지 변경
+            img.width="200";//이미지 크기 변경
+            img.height="200";
+        }
+        function fun5(){
+            //객체 찾기
+            const img = document.querySelector("#img1");
+            //객체 속성(데이터)변경
+            img.src="/common/image/photo6.jpg";//이미지 변경
+            img.width="150";//이미지 크기 변경
+            img.height="150";
+        }
+        function fun6(){
+            const imgNodeList = document.querySelectorAll("img");//nodelist로 출력됨 / 태그이름으로 찾는거임
+            console.log(imgNodeList);
+            const img = imgNodeList.item(0);
+
+            //객체 속성(데이터)변경
+            img.src="/common/image/photo2.jpg";//이미지 변경
+            img.width="200";//이미지 크기 변경
+            img.height="200";
+        }
+
+    </script>
+</head>
+<body>
+    <button onclick="fun1()">객체 찾기 및 데이터 변경</button>
+    <button onclick="fun2()">객체 찾기 및 데이터 변경</button>
+    <button onclick="fun3()">객체 찾기 및 데이터 변경</button>
+    <button onclick="fun4()">객체 찾기 및 데이터 변경</button>
+    <button onclick="fun5()">객체 찾기 및 데이터 변경</button>
+    <button onclick="fun6()">객체 찾기 및 데이터 변경</button>
+    <hr>
+    <img id="img1" class="group1" src="/common/image/photo1.jpg" width="150px" height="150px">
+</body>
+</html>

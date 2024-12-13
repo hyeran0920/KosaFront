@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            border: 1px solid black;
+        }
+        .wrapper{
+            display: flex;
+            flex-direction: column;
+            height: 400px;
+        }
+        #div1{
+            flex-grow: 1;
+        }        
+        #div2{
+            width: 300px;
+            flex-grow: 3;
+        }        
+        #div3{
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+<h4>FlexBox를 이용한 레이아웃 구성</h4>
+<hr>
+    <div class="wrapper">
+        <div id="div1">d</div>
+        <!-- <img src="../common/image/photo1.jpg" width="100px" height="100px">
+        <img src="../common/image/photo2.jpg" width="100px" height="100px">
+        <img src="../common/image/photo3.jpg" width="100px" height="100px"> -->
+        <div id="div2">d</div>
+        <!-- <span style="width: 200px;"></span> -->
+        <div id="div3">d</div>
+    </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //class(설계도) 선언
+        //js는 public같은게 없다
+        class Car{
+            //Field -> Property
+            //Property 선언 방법 없음
+
+            //Constructor
+            constructor(name ="그랜저", price =5000){
+                //property 선언
+                this.name = name;
+                this.price = price;
+            }
+            //Method
+            start(){
+                console.log(this.name + "가 시동을 겁니다")
+            }
+            setPrice(price){
+                this.price = price;
+            }
+        }
+        //객체 생성
+        const myCar = new Car("람보기니", 300);
+        const yourCar = new Car("포르쉐");
+        const herCar = new Car();
+        console.log(herCar.name, herCar.price);
+
+    </script>
+</body>
+</html>

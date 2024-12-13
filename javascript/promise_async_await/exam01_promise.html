@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function task(){//Promise 리턴
+            return new Promise((resolve, reject)=>{
+                //작업처리
+                const result = false;
+                if(result){
+                    resolve();//함수라는 뜻
+                }else{
+                    reject();//함수 호출
+                }
+            });
+        }
+        //Vue 라이브러리가 원래 promise를 알아서 제공함 
+        //work만 작성하면 되,,,,
+        //task는 외부라이브러리가 보통 만듬
+        function work1(){
+            task()
+                .then(() => {
+                    console.log("성공 처리됨"); //resolve
+                })
+                .catch(() => {
+                    console.log("실패 처리됨");//reject
+                })
+                .finally(() => {
+                    console.log("마무리 작업");
+                });
+
+        }
+        function work2(){
+            //이렇게도 작성할 수 있다
+            task().then(
+                () => {
+                    console.log("성공 처리됨");
+                },
+                () =>{
+                    console.log("실패 처리됨");
+                }
+            );
+        }
+        //promise 리턴(비동기처리)
+        async function work3(){ //async +await는 세트
+            //비동기 처리를 위한 await(대기)를 async안에 있어야한다
+            try{
+                await task();
+                console.log("성공 처리됨");
+            }catch(err){
+                console.log("실패 처리됨");
+            }
+        }
+        function work4(){
+            console.log("A");
+            work3(); //비동기 처리하기 위해서 async를 붙힘
+            console.log("B");//A랑 B는 바로 실행 work3은 끝날때까지 알아서 실행 ㄱㄱ 하쉐이
+            //그래서 실행순서 A B work
+        }
+
+        //제일 많이 씀
+        function work5(){
+            //work3+work4 합체임
+            console.log("A");
+            const work = async() => {
+                try{
+                await task();
+                console.log("성공 처리됨");
+                }catch(err){
+                    console.log("실패 처리됨");
+                }
+            };
+            work();
+            console.log("B")
+        }
+
+        </script>
+    </head>
+<body>
+    <button onclick="work1()">비동기 작업 처리</button>
+    <button onclick="work2()">비동기 작업 처리</button>
+    <button onclick="work3()">비동기 작업 처리</button>
+    <button onclick="work4()">비동기 작업 처리</button>
+    <button onclick="work5()">비동기 작업 처리</button>
+</body>
+</html>

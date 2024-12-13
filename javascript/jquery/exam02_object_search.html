@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+
+    <script>
+        function fun1(){
+            const imgNodeList = document.querySelectorAll(".group1");
+            imgNodeList.forEach((img)=>{
+                img.src="/common/image/photo2.jpg";
+            })
+        }
+        //jQuery 방식
+        function fun2(){
+            $(".group1").attr("src","/common/image/photo3.jpg");
+        }
+
+    </script>
+</head>
+<body>
+    <button onclick="fun1()">Document를 이용해서 찾기</button>
+    <button onclick="fun2()">jQuery를 이용해서 찾기</button>
+    <hr>
+    <img id="img1" class="group1" src="/common/image/photo1.jpg" width="150px" height="150px">
+    <img id="img1" class="group1" src="/common/image/photo1.jpg" width="150px" height="150px">
+    <img id="img1" class="group1" src="/common/image/photo1.jpg" width="150px" height="150px">
+</body>
+</html>

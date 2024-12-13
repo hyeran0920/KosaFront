@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        try {
+            // const arr = [1,2,3];
+            // console.log(arr[3]);//js는 가변가능(그래서 에러 안나옴)
+
+            // if(arr[3] ==undefined){
+            //     throw {name: "OutOfIndex", message:"에러"};
+            // }
+            
+            let var1 = "a10b";
+            let var2 = parseInt(var1);
+            if(!var2){
+            // if(var2 ===NaN){ //이건 안됨 
+                throw {name: "NaN", message:"숫자로 변환안되는 문자열"};
+                
+            }
+            
+            /*
+            const var4 = "abc";
+            var4 = "def";*/
+        } catch (err) {//에러가 발생하면 밑에를 실행시킨다
+            console.log(err)
+            console.log(err.name);
+            console.log(err.message);
+        }finally{
+            console.log("마무리 작업");//마지막에 무조건 나온다 java랑 비슷
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

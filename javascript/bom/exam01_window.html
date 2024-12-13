@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun1(){//로그 이동
+            window.console.log("로그1");
+            console.log("로그2") //window는 생략 가능해서 얘랑 위에랑 같음
+
+            console.group("group1");
+            console.log("Hello again, this time inside a group!");
+            console.log("Hello again, this time inside a group!");
+            console.groupEnd();
+
+            console.group("group2");
+            console.log("Hello again, this time inside a group!");
+            console.log("Hello again, this time inside a group!");
+            console.groupEnd();
+        }
+
+        function fun2(){//페이지 이동
+            // window.location.href= "https://www.naver.com"; 
+            location.href="https://www.naver.com";
+        }
+
+        function fun3(){//이전페이지
+            window.history.back();//이전버튼
+        }
+        function fun4(){//다음 페이지
+            window.history.forward();//이후 버튼
+        }
+        
+        //쓰지말아야할거
+        function fun5(){//메세지 다이얼로그
+            window.alert("사용자에게 보여줄 메세지");
+            alert("사용자에게 보여줄 메세지");
+        }
+        function fun6(){//확인 다이얼로그
+            window.confirm("선택한 것이 맞습니까?");
+            if(result){
+                console.log("확인");
+            }else{
+                console.log("취소");
+            }
+        }
+        function fun7(){//입력 다이얼로그
+            var num = window.prompt("수량을 입력하세요", 0);
+            if(num == null){
+                console.log("취소");
+            }else{
+                console.log("입력한 내용" + num);
+            }
+        }
+        function fun8(){//윈도우창 띄우기
+            var mywindow = window.open("https://www.w3schools.com","","width=500","height=300");
+        }
+    </script>
+</head>
+<body>
+    <button onclick="fun1()">로그 출력</button>
+    <button onclick="fun2()">페이지 이동</button>
+    <hr>
+    <button onclick="fun3()">이전페이지 이동</button>
+    <button onclick="fun4()">다음페이지 이동</button>
+    <hr>
+    <button onclick="fun5()">메세지 다이얼로그</button>
+    <button onclick="fun6()">메세지 다이얼로그</button>
+    <button onclick="fun7()">입력 다이얼로그</button>
+    <button onclick="fun8()">윈도우 팝업 띄우기</button>
+
+    
+</body>
+</html>

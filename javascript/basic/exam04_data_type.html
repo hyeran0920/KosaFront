@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let var1 = 1;
+        let var2 = "1";
+        let var3 = {};//객체 선언
+        let var4 =[]; //배열(리스트)
+
+        //함수(함수도 객체)
+        let var5 = function(){};//함수 이름이 변수 역할을 함
+        function var6(){} //위에랑 같음
+        let var7 = var6;//함수 객체 참조
+        var5;
+        var6;
+        var7;
+
+        //Arrow Function(화살표 함수, 람다식)
+        let var8 = () =>{};
+        let var9 = function(){}
+
+        console.log("var1 type ", typeof var1)//number
+        console.log("var2 type ", typeof var2)//string
+        console.log("var3 type ", typeof var3)//object
+        console.log("var4 type ", typeof var4)//object
+        console.log("var5 type ", typeof var5)//function
+        console.log("var6 type ", typeof var6)//function
+        console.log("var7 type ", typeof var7)//function
+        console.log("var8 type ", typeof var8)//function
+        console.log("var9 type ", typeof var9)//function
+
+    </script>
+
+</body>
+</html>

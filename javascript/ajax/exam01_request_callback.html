@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jQuery 라이브러리 가져오기 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+
+    <script>
+        function fun1(){
+            $.ajax({
+                url :"exam01_response.html",
+                // method:"post",//요청방식 (post는 보내는게 없어서 오류난다)
+                success: function(data){ //=>함수는 객체 안의 객체를 가르킬때 X this는 현재 함수를 가르키지않아서 화살표 함수 X
+                    $("#content").html(data);//이 html내용으로 지정구역 html내용을 다 바꾸자~
+                }, //callback 함수
+                success: function(data){
+                    $("#content").html(data);
+                },
+                error : function(err){
+                    console.log(err);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <button onclick="fun1()">ajax 요청</button>
+    <hr>
+    <div id ="content"><!--ajax에서 받아오는 내용을 div안에 넣을거임-->
+
+    </div>
+</body>
+</html>

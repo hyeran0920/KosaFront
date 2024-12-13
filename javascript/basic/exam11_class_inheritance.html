@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Inheritance - 상속
+        //부모 class(설계도) 선언
+        class Car{
+            //Field -> Property
+            //Property 선언 방법 없음
+
+            //Constructor
+            constructor(name ="그랜저", price =5000){
+                //property 선언
+                this.name = name;
+                this.price = price;
+            }
+            //Method
+            start(){
+                console.log(this.name + "가 시동을 겁니다")
+            }
+            setPrice(price){
+                this.price = price;
+            }
+        }
+
+        //자식 클래스 생성
+        class SportsCar extends Car{
+            //property가 상속됨
+            // constructor(mode){
+            constructor(name, price, mode){
+                // super();//부모 생성자 호출
+                // super("포르쉐",60000);
+                super(name, price);
+
+                this.mode = mode;
+            }
+
+            setMode(mode){
+                this.mode = mode;
+            }
+        }
+        //자식 객체
+        // const myCar = new SportsCar("스포츠모드");
+        const myCar = new SportsCar("포르쉐", 60000,"스포츠모드");
+        console.log(myCar.name);
+        console.log(myCar.price);
+        console.log(myCar.mode);
+    </script>
+</body>
+</html>

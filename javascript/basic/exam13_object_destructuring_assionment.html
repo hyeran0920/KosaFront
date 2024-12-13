@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 자바스크립트 객체 구조 분해 할당 -->
+<body>
+     <script>
+        let board ={
+            title: "오늘은 화요일",
+            content: "오늘은 자바스크립트를 학습하고 있어요. 행복합니다.",
+            writer: "홍길동",
+        };
+
+        // board.title="xxx"; //객체 속성의 내용은 바꿀수 있음
+        // board = {}; //객체의 번지는 수정 불가
+
+        console.log(board.title);
+
+        // var title = board.title; //title값만 받기
+        var{title} = board; //위에랑 같은거임 ㄱ-
+        console.log("title : ", title);
+        
+        var{title, writer} = board; //board에 title과 writer 속성을 가져와라
+        console.log("title : ", title);
+        console.log("writer : ", writer);
+        
+        function fun1({title, writer}){
+            console.log("title : ", title);
+            console.log("writer : ", writer);
+
+        }
+        console.log("board");
+        fun1(board);//board객체 안에 있는 속성 불러오기?
+    </script>
+
+    <script>
+        const member ={
+            mid:"summer",
+            name :"한여름",
+            age :25
+        };
+        var{mid, ...rest} = member; //...rest는 나머지를 객체로 만든다
+        console.log("mid: ", mid);
+        console.log("rest: ", rest);
+        </script>
+
+<script>
+        function changeState1(board){
+            //동적 속성 추가
+            //React나 Vue에서 상태 객체를 변경할 때 속성만 추가할 수 없다
+            // board.bno = 1;
+            // return board;
+            
+            //React나 Vue에서 상태 객체를 변경할 때 새로운 객체를 생성해서 변경
+            // return{
+            //     bno:1, 
+            //     title: board.title, 
+            //     content : board.content,
+            //      writer :board.writer
+            //     };
+
+            // return{... board, bno:1}; //...board는 보드안에 잇는 속성 다 추가하는거 앞에 있어야함
+            return{...board, bno:1, title:"괴롭네"};//title만 수정 객체는 맨 앞에 와야한다
+            //상태값 변경할때 많이 씀
+        }
+
+        const changeState2 =(board) =>({...board, bno:1});
+        
+        board ={
+            title: "오늘은 화요일",
+            content: "오늘은 자바스크립트를 학습하고 있어요. 행복합니다.",
+            writer: "홍길동",
+        };
+        const newBoard = changeState1(board); //원래객체에 addBno한다?
+        console.log("new Board",newBoard);
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+
+    <style>
+        .rounded-circle{
+            border-radius: 50%;
+        }
+        .red-border{
+            border: 10px solid red;
+        }
+    </style>
+    <script>
+        // css를 조작하는 함수들
+        $(()=>{
+            $("#btn1").on("click", btnClick);
+            $("#btn2").on("click", btn2Click);
+            $("#btn3").on("click", btn3Click);
+        })
+    </script>
+    <script>
+        function btnClick(){
+            const img1 = $("#img1");
+            //속성값을 변경하는 방법 제이쿼리 
+            img1.attr("src","/common/image/photo3.jpg")//jQuery는 속성이 아니라 메소드로 처리함(속성, 바꿀내용)
+            img1.attr("width", "300"); 
+            img1.attr("height", "300"); 
+            
+            //css 변경방법
+            const img2 = $("#img2");
+            img2.css("width", "200px")
+            img2.css("height", "200px")
+
+            //class 변경
+            img1.addClass("rounded-circle");
+            // img2.removeClass("rounded-circle");
+            img1.addClass("red-border");
+            
+            const changeDiv = $("#changeDiv")
+            changeDiv.css("background-color", "blue"); 
+        }
+        function btn2Click() {
+            const addDiv =$("#addDiv");
+            
+            // 방법 1: 전체 내용 바꾸기
+            addDiv.html( '<img src="/common/image/photo3.jpg" width="100" height="100"/>');
+            //방법2 : 엘리멘트 객체를 생성하고 맨 끝에 추가
+            addDiv.append( '<img src="/common/image/photo3.jpg" width="100" height="100"/>');
+            
+        }
+        
+        function btn3Click() {
+            const removeDiv = $("#removeDiv");
+            
+            // 전체 내용 제거
+            // removeDiv.html()"";
+            // removeDiv.empty()"";
+
+            // 특정 이미지 삭제
+            const img3 = $("#img3");
+            img3.remove();//자기 자신 지우기
+        }
+    </script>
+
+</head>
+<body>
+    <button id="btn1">변경</button>
+    <hr/>
+    <div id="changeDiv">
+        <img id="img1" src="/common/image/photo1.jpg" style="width:100px; height:100px;"/>
+        <img id="img2" src="/common/image/photo2.jpg" width="100" height="100" class="rounded-circle"/>
+    </div>
+
+    <button id="btn2">추가</button>
+    <hr/>
+    <div id="addDiv"></div>
+
+    <button id="btn3">삭제</button>
+    <hr/>
+    <div id="removeDiv">
+        <img id="img3" src="/common/image/photo3.jpg" width="100" height="100" class="rounded-circle"/>
+        <img id="img4" src="/common/image/photo4.jpg" width="100" height="100" class="rounded-circle"/>
+    </div>
+</body>
+</html>
